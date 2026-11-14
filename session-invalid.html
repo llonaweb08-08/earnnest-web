@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Link Expired | EarnNest</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="center-page">
+    <div class="icon-circle">!</div>
+    <h1>This link has expired or is invalid</h1>
+    <p>Please return to the EarnNest app and start the task again.</p>
+    <p id="error-detail" class="error-detail"></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const err = params.get('error');
+    if (err) {
+      document.getElementById('error-detail').textContent = err;
+    }
+  </script>
+</body>
+</html>
